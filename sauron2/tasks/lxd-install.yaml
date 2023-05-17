@@ -1,7 +1,0 @@
-- hosts: localhost
-  connection: local
-  tasks:
-    - name: Instalar lxd
-      community.general.snap:
-        name: 
-          - lxd
