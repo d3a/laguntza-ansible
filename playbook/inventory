@@ -1,11 +1,7 @@
-[conjunto1]
-m1-1
-m1-2
+[ubuntu]
+u1
+u2
 
-[conjunto2]
-m2-1
-m2-2
-
-[todas:children]
-conjunto1
-conjunto2
+[rocky]
+r1
+r2
