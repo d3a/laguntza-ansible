@@ -3,7 +3,7 @@
 ## Instalación 
 ### Ubuntu
 ```bash
-apt install ansible
+snap install ansible
 ```
 
 
