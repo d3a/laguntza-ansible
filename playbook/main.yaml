@@ -1,0 +1,4 @@
+- name "Playbook 1"
+  file tasks/pbook1.yaml
+- name "Subtask 2"
+  file tasks/pbook2.yaml

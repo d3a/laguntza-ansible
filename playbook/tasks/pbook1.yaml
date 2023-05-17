@@ -1,0 +1,3 @@
+- hosts conjunto1
+- name "Playbook Uno"
+  tasks:
