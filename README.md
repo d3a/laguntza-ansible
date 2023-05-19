@@ -1,4 +1,4 @@
-# Instalación
+# LXD/LXC
 
 ## Instalación 
 ### Ubuntu
