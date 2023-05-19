@@ -15,7 +15,7 @@ ssh-add ${clave_privada}
 
 **Instalar e inicializar LXD**
 ```bash
-sudo apt install lxd
+snap install lxd
 lxd init
 ```
 
@@ -33,19 +33,34 @@ lxc launch ubuntu:22.04 Ubuntu2204
 lxc exec Ubuntu2204 -- /bin/bash
 ```
 
-Dentro del contenedor Ubuntu2204 crear  usuario e instalar SSH
+Dentro del contenedor Ubuntu2204 crear usuario e instalar SSH
 ```bash
 useradd ansible -m -G sudo
 echo ansible:ansible | chpasswd
 
+apt update
+apt upgrade
 apt install ssh
+vim /etc/ssh/sshd_config
+# para incluir:
+# PasswordAuthentication yes
+service ssh restart
 ```
-
 De nuevo en el host dar de alta maquina en hostst y estableces clave 
 ```bash
 sudo echo "<ip-ubuntu2204>   ubuntu2204" >> /etc/hosts
 ssh-copy-id -i ${clave_privada}.pub ansible@ubuntu2204
 ```
+
+Denuevo dentro dentro del contenedor Ubuntu2204 securizamos SSH
+```bash
+vim /etc/ssh/sshd_config
+# para incluir:
+# PasswordAuthentication no
+# PermitRootLogin no
+service ssh restart
+```
+
 
 
 **Rocky Linux 8/9**
@@ -97,6 +112,6 @@ Crear nuevos contenedores a partir de las nuevas plantaillas
 ```
 
 ```bash
-lxc list
+lxc list -c nts4Dmf
 lxc image list
 ```
