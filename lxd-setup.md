@@ -1,8 +1,6 @@
-# LXD/LXC
+# Instalación LXD/LXC
 
 Instalación y preparación del contenedores LXD para laboratorio de Ansible.
-
-
 
 **Crear par de claves para conexiones ssh**
 ```bash

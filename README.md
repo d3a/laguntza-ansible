@@ -1,6 +1,7 @@
-# Instalación
+# LXD/LXC
 
-## Instalación 
+## [Instalación](lxd-setup.md)
+
 ### Ubuntu
 ```bash
 apt install ansible
@@ -25,7 +26,6 @@ ansible <target> [-i <invent-file>] -m <modulo>
 ### ansible-doc
 
 ### ansible-vault
-
 ```bash
 ansible-vault encrypt_string 'foobar' --name 'the_secret' --ask-vault-pass
 
