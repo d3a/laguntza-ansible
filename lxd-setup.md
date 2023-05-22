@@ -94,8 +94,6 @@ sudo echo "<ip-rockylinux9>   rockylinux9" >> /etc/hosts
 ssh-copy-id -i ${clave_privada}.pub ansible@ubuntu2204
 ```
 
-
-
 ## Crear plantilla a partir de los contenedores Base
 Parar el conetnedores
 ```bash
@@ -105,10 +103,15 @@ lxc stop RockyLinux9
 ```
 Crear plantillas
 ```bash
+lxc publish Ubuntu2204 --alias=Ubuntu2204ansible description="Ubuntu 22.04 con usuario ansible"
+lxc publish RockyLinux8 --alias=RockyLinux8ansible description="Rocky Linux 8 con usuario ansible"
+lxc publish RockyLinux9 --alias=RockyLinux9ansible description="Rocky Linux 9 con usuario ansible"
 ```
 
 Crear nuevos contenedores a partir de las nuevas plantaillas
 ```bash
+lxc launch Ubuntu2204ansible ua1
+lxc launch Ubuntu2204ansible ua2
 ```
 
 ```bash
