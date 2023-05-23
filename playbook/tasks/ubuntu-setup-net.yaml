@@ -1,3 +1,13 @@
 ---
-
+- name: Configuracion de red estatica para servidores Ubuntu
+  hosts: ubuntu
+  tasks:
+    - name: Copiar fichero de configuracion
+      ansible.builtin.copy:
+        src: ../files/etc/netplan/50-cloud-init.yaml
+        dest: /etc/netplan/50-cloud-init.yaml
+        owner: root
+        group: root
+        mode: '0644'
+    
 ...

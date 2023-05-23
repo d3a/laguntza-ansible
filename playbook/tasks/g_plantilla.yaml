@@ -1,0 +1,16 @@
+---
+- name: Nombre del playbook
+  hosts: servidores_destino
+  gather_facts: yes | no
+  vars:
+    - lista_valores:
+      - elemento1
+      - elemento2
+      - elemento3
+    - valor_cadena: "valor entre comillas"
+    - valor: valor sin comillas
+  vars_files: # importación de variables desde fichero
+    - fichero_vars.yaml
+  include_vars: # importación de variables en un array u objeto desde fichero
+    name: nombre_array_variables
+    file: fichero_vars.yaml
