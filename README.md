@@ -11,15 +11,25 @@ apt install ansible
 
 ## Comandos
 
+### ansible-inventory
+```bash
+ansible-inventory [--inventory <invent-file>] [--output <output-file>] [--yaml | --toml] --list
+ansible-inventory [--inventory <invent-file>] [--vars] --graph
+ansible-inventory [--inventory <invent-file>] --host <host>
+```
+
 ### ansible
 ```bash
 ansible <target> [-i <invent-file>] -m <modulo>
     modulo:
         ping
-        setup
+        setup   # facts
+    -a "/sbin/reboot"
+    -m ansible.builtin.copy -a "src=/etc/hosts dest=/tmp/hosts"
+    -m ansible.builtin.apt -a "name=acme state=present"
+    -m ansible.builtin.user -a "name=nombre_usuario password=mipass"
+    -m ansible.builtin.service -a "name=httpd state=started"
 ```
-
-### ansible-inventory
 
 ### ansible-playbook
 
