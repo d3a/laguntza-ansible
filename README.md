@@ -20,20 +20,27 @@ ansible-inventory [--inventory <invent-file>] --host <host>
 
 ### ansible
 ```bash
-ansible <target> [-i <invent-file>] -m <modulo>
-    modulo:
+ansible <target> [-i <invent-file>] [-m <modulo>] [-a <argumentos>]
+    algunos modulos:
+        command # default
+        shell
+        script
         ping
         setup   # facts
-    -a "/sbin/reboot"
-    -m ansible.builtin.copy -a "src=/etc/hosts dest=/tmp/hosts"
-    -m ansible.builtin.apt -a "name=acme state=present"
-    -m ansible.builtin.user -a "name=nombre_usuario password=mipass"
-    -m ansible.builtin.service -a "name=httpd state=started"
+    ejemplos:
+        -a "/sbin/reboot"
+        -m ansible.builtin.copy -a "src=/etc/hosts dest=/tmp/hosts"
+        -m ansible.builtin.apt -a "name=acme state=present"
+        -m ansible.builtin.user -a "name=nombre_usuario password=mipass"
+        -m ansible.builtin.service -a "name=httpd state=started"
 ```
 
 ### ansible-playbook
 
 ### ansible-doc
+```bash
+ansible-vault --list | <modulo>
+```
 
 ### ansible-vault
 ```bash
