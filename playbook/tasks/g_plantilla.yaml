@@ -14,3 +14,16 @@
   include_vars: # importación de variables en un array u objeto desde fichero
     name: nombre_array_variables
     file: fichero_vars.yaml
+  tasks:
+    - name: nombre de la tarea
+      modulo.de.la.tarea:
+        param1: valor1
+        param2: valor2
+    - name: tarea de ejecucion
+      exec:
+        param1: valor1
+        param2: valor2
+    - name: tarea de shell
+      shell:
+        param1: valor1
+        param2: valor2
