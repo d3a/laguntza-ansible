@@ -36,6 +36,9 @@ ansible <target> [-i <invent-file>] [-m <modulo>] [-a <argumentos>]
 ```
 
 ### ansible-playbook
+```bash
+ansible-playbook [--inventory <inventory-file>] [--step] [--check] [--syntax-check] <playbook.yaml> 
+```
 
 ### ansible-doc
 ```bash

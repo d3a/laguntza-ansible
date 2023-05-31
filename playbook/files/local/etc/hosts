@@ -10,8 +10,5 @@ ff02::2 ip6-allrouters
 
 
 # Hosts personalizados
-10.124.143.59   ubuntu2204
-10.124.143.200 rockylinux8
-10.124.143.40 rockylinux9
-10.124.143.235 ua2 ua2.ubuntu.local
-10.124.143.247 ua1 ua1.ubuntu.local
+10.124.143.101 ua1 ua1.ubuntu.local
+10.124.143.102 ua2 ua2.ubuntu.local

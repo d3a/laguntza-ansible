@@ -2,6 +2,20 @@
 - name: Nombre del playbook
   hosts: servidores_destino
   gather_facts: yes | no
+
+  # Identidad Remota
+  remote_user: <usuario-al-que-conectar>
+  become: true | false
+  become_method: sudo
+  become_user: <usuario-que-ejecuta>
+  
+  # Toimeouts
+  async: 45 # ???
+  poll: 5   # ???
+
+  # Configuracion del sistema
+
+  # Variables
   vars:
     - lista_valores:
       - elemento1

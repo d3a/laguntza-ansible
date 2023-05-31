@@ -2,8 +2,13 @@ network:
   version: 2
   ethernets:
     eth0:
+      dhcp6: true
       dhcp6: false
-      addresses: [10.124.143.247/24]
-      gateway4: 10.124.143.1
+      addresses: [10.124.143.101/24]
+      routes:
+        - to: default
+          via: 10.124.143.1
       nameservers:
-        addresses: [8.8.8.8,8.8.4.4]
+        addresses: 
+          - 8.8.8.8
+          - 8.8.4.4

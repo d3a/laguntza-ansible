@@ -2,8 +2,13 @@ network:
   version: 2
   ethernets:
     eth0:
+      dhcp6: true
       dhcp6: false
       addresses: [{{ ip }}/24]
-      gateway4: {{ gw }}
+      routes:
+        - to: default
+          via: {{ gw }}
       nameservers:
-        addresses: [8.8.8.8,8.8.4.4]
+        addresses: 
+          - 8.8.8.8
+          - 8.8.4.4

@@ -3,10 +3,15 @@
   hosts: ua1
   tasks:
     - name: Copiar fichero de configuracion
-      ansible.builtin.copy:
+      copy:
         src: ../files/ua1/etc/netplan/50-cloud-init.yaml
         dest: /etc/netplan/50-cloud-init.yaml
         owner: root
         group: root
         mode: '0644'
+    - name: Reiniciar la red
+      shell:
+        cmd: netplan apply
+      async: 45
+      poll: 5
 ...
