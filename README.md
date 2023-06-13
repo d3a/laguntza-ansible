@@ -9,8 +9,6 @@
 apt install ansible
 ```
 
-
-
 ## Comandos
 
 ### ansible-inventory
