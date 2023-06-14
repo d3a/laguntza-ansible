@@ -2,6 +2,11 @@
 ua1
 ua2
 
+[ubuntu:vars]
+
+[ua1:vars]
+
 [rocky]
 r1
 r2
+
