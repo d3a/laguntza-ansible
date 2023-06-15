@@ -35,6 +35,17 @@ ansible <target> [-i <invent-file>] [-m <modulo>] [-a <argumentos>]
         -m ansible.builtin.service -a "name=httpd state=started"
 ```
 
+Leer facts con filtro:
+```bash
+ansible <target> [-i <invent-file>] -m setup -a "filter=patron_filtro"
+```
+
+Usar facts:
+```bash
+{{ ansible_facts.nombre_propiedad }}
+```
+
+
 ### ansible-playbook
 ```bash
 ansible-playbook [--inventory <inventory-file>] [--step] [--check] [--syntax-check] <playbook.yaml> 
