@@ -43,3 +43,14 @@
       shell:
         param1: valor1
         param2: valor2
+    - name: tarea con handler
+      modulo:
+        param1: valor1
+        param2: valor2
+      notify:
+        - Accion a realizar
+
+  # Handlers
+  handlers:
+    - name: Accion a realizar
+      command: comando
